@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unemployment Triggers Systemic Collapse — Evidence Pack</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --green-deep: #0f2b1f;
+  --green-mid: #163B2F;
+  --green-light: #1f5040;
+  --cream: #F6F1E8;
+  --cream-dim: #e8e0d0;
+  --brown: #7A3E2D;
+  --brown-light: #a05c44;
+  --sage: #A6BBA3;
+  --white: #ffffff;
+  --text-dark: #1D1D1D;
+  --gold: #c9a84c;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--green-deep);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(15,43,31,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(166,187,163,0.15);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--sage); letter-spacing: 0.02em;
+}
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.78rem; font-weight: 500;
+  color: rgba(246,241,232,0.7); letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+  padding: 100px 2rem 60px;
+  background: linear-gradient(160deg, #0a1f15 0%, #163B2F 55%, #0f2b1f 100%);
+}
+.hero-noise {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(166,187,163,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(166,187,163,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 1.5rem; font-weight: 500;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 30px; height: 1px; background: var(--sage);
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 900; line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+h1 em { color: var(--sage); font-style: normal; }
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(246,241,232,0.7);
+  font-weight: 300; margin-bottom: 1.8rem; max-width: 620px; line-height: 1.6;
+}
+.hero-body {
+  font-size: 0.95rem; color: rgba(246,241,232,0.6);
+  max-width: 580px; line-height: 1.75; margin-bottom: 2.5rem;
+}
+.btn-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn {
+  display: inline-block; padding: 0.8rem 1.8rem;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s;
+  border: none;
+}
+.btn-primary { background: var(--sage); color: var(--green-deep); }
+.btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent; color: var(--sage);
+  border: 1px solid rgba(166,187,163,0.5);
+}
+.btn-outline:hover { border-color: var(--sage); background: rgba(166,187,163,0.08); }
+
+/* domino strip */
+.domino-strip {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-top: 4rem; padding-top: 2rem;
+  border-top: 1px solid rgba(166,187,163,0.12);
+  flex-wrap: wrap;
+}
+.domino-chip {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.35rem 0.8rem; border-radius: 2px;
+  background: rgba(166,187,163,0.1); color: var(--sage);
+  border: 1px solid rgba(166,187,163,0.2);
+}
+.domino-arrow { color: rgba(166,187,163,0.3); font-size: 0.8rem; }
+
+/* ── SECTIONS SHARED ── */
+section { padding: 90px 2rem; }
+.section-inner { max-width: 1080px; margin: 0 auto; }
+.section-label {
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 0.8rem; font-weight: 500;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700; line-height: 1.15;
+  color: var(--cream); margin-bottom: 1.2rem;
+}
+.lead {
+  font-size: 1.05rem; color: rgba(246,241,232,0.65);
+  max-width: 640px; line-height: 1.8; margin-bottom: 3rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(166,187,163,0.12);
+  border-radius: 4px; padding: 1.8rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+.card:hover {
+  background: rgba(166,187,163,0.07);
+  border-color: rgba(166,187,163,0.3);
+}
+.card-icon { font-size: 1.6rem; margin-bottom: 0.9rem; }
+.card h3 {
+  font-size: 0.95rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem;
+}
+.card p { font-size: 0.85rem; color: rgba(246,241,232,0.55); line-height: 1.7; }
+
+/* callout */
+.callout {
+  border-left: 3px solid var(--sage);
+  padding: 1.2rem 1.8rem;
+  background: rgba(166,187,163,0.06);
+  margin-top: 2.5rem; border-radius: 0 4px 4px 0;
+}
+.callout p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: var(--sage); font-weight: 700; font-style: italic;
+}
+
+/* ── PROBLEM ── */
+#problem { background: rgba(255,255,255,0.015); }
+
+/* ── DOMINO EFFECT ── */
+#domino { background: var(--green-deep); }
+.domino-chain {
+  display: flex; gap: 0; flex-wrap: wrap;
+  margin-bottom: 3rem; align-items: stretch;
+}
+.dom-item {
+  flex: 1; min-width: 130px;
+  border: 1px solid rgba(166,187,163,0.15);
+  border-right: none;
+  padding: 1.6rem 1.2rem; cursor: pointer;
+  transition: all 0.25s; position: relative;
+  background: rgba(255,255,255,0.03);
+}
+.dom-item:last-child { border-right: 1px solid rgba(166,187,163,0.15); }
+.dom-item:hover, .dom-item.active {
+  background: rgba(166,187,163,0.1);
+  border-color: rgba(166,187,163,0.4);
+  z-index: 2;
+}
+.dom-num {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 0.6rem; font-weight: 600;
+}
+.dom-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 0.5rem;
+}
+.dom-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.dom-expand {
+  font-size: 0.78rem; color: rgba(246,241,232,0.5); line-height: 1.6;
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+}
+.dom-item.active .dom-expand { max-height: 200px; }
+
+/* ── KEY DATA ── */
+#data { background: rgba(255,255,255,0.015); }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px; background: rgba(166,187,163,0.1);
+  border: 1px solid rgba(166,187,163,0.1); border-radius: 4px; overflow: hidden;
+  margin-bottom: 2rem;
+}
+.stat-box {
+  background: var(--green-deep);
+  padding: 2.2rem 1.8rem;
+  transition: background 0.2s;
+}
+.stat-box:hover { background: rgba(166,187,163,0.07); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 900; color: var(--sage); line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label { font-size: 0.8rem; font-weight: 600; color: var(--cream); margin-bottom: 0.3rem; }
+.stat-desc { font-size: 0.75rem; color: rgba(246,241,232,0.45); line-height: 1.5; }
+.verify { color: var(--gold); font-size: 0.7rem; font-style: italic; }
+
+/* ── GRAPHS ── */
+#graphs { background: var(--green-deep); }
+.graph-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 1.5rem; }
+.graph-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(166,187,163,0.12);
+  border-radius: 4px; padding: 2rem; overflow: hidden;
+}
+.graph-title { font-size: 0.9rem; font-weight: 600; color: var(--cream); margin-bottom: 0.4rem; }
+.graph-subtitle { font-size: 0.75rem; color: var(--sage); margin-bottom: 1.5rem; }
+canvas { width: 100% !important; border-radius: 2px; }
+
+/* ── METHOD ── */
+#method { background: rgba(255,255,255,0.015); }
+
+/* ── BUSINESS ── */
+#business { background: var(--green-deep); }
+.business-hero-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--cream); margin-bottom: 3rem; line-height: 1.3;
+  border-left: 3px solid var(--brown-light); padding-left: 1.5rem;
+}
+.business-hero-text em { color: var(--sage); font-style: normal; }
+
+/* ── OPPORTUNITY ── */
+#opportunity { background: rgba(255,255,255,0.015); }
+.big-statement {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  color: var(--cream); margin-top: 3rem; line-height: 1.2;
+  max-width: 700px;
+}
+.big-statement span { color: var(--sage); }
+
+/* ── SDGs ── */
+#sdgs { background: var(--green-deep); }
+.sdg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.sdg-card {
+  border: 1px solid rgba(166,187,163,0.12);
+  border-radius: 4px; padding: 1.4rem 1.6rem;
+  background: rgba(255,255,255,0.03);
+  display: flex; gap: 1rem; align-items: flex-start;
+  transition: background 0.2s;
+}
+.sdg-card:hover { background: rgba(166,187,163,0.07); }
+.sdg-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900; color: var(--sage); line-height: 1;
+  min-width: 2.5rem;
+}
+.sdg-text h4 { font-size: 0.85rem; font-weight: 600; color: var(--cream); margin-bottom: 0.3rem; }
+.sdg-text p { font-size: 0.78rem; color: rgba(246,241,232,0.5); line-height: 1.6; }
+
+/* ── DOWNLOADS ── */
+#downloads { background: rgba(255,255,255,0.015); }
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; margin-top: 2rem;
+}
+.dl-card {
+  border: 1px solid rgba(166,187,163,0.2);
+  border-radius: 4px; padding: 1.8rem 1.4rem;
+  background: rgba(166,187,163,0.05);
+  text-align: center; cursor: pointer;
+  transition: all 0.25s; text-decoration: none;
+}
+.dl-card:hover {
+  background: rgba(166,187,163,0.12);
+  border-color: var(--sage); transform: translateY(-3px);
+}
+.dl-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.dl-name { font-size: 0.85rem; font-weight: 600; color: var(--cream); margin-bottom: 0.3rem; }
+.dl-desc { font-size: 0.72rem; color: rgba(246,241,232,0.45); }
+
+/* ── REFERENCES ── */
+#references { background: var(--green-deep); }
+.ref-list { list-style: none; }
+.ref-list li {
+  padding: 1rem 0; border-bottom: 1px solid rgba(166,187,163,0.08);
+  font-size: 0.82rem; color: rgba(246,241,232,0.6); line-height: 1.7;
+}
+.ref-list li:last-child { border-bottom: none; }
+
+/* ── TEAM ── */
+#team { background: rgba(255,255,255,0.015); }
+.team-box {
+  border: 1px solid rgba(166,187,163,0.15);
+  border-radius: 4px; padding: 2.5rem;
+  background: rgba(166,187,163,0.04); max-width: 680px;
+}
+.team-box h3 { font-size: 1.1rem; font-weight: 600; color: var(--cream); margin-bottom: 1.2rem; }
+.team-row { display: flex; gap: 1rem; margin-bottom: 0.6rem; align-items: baseline; }
+.team-key { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); min-width: 120px; font-weight: 500; }
+.team-val { font-size: 0.85rem; color: rgba(246,241,232,0.7); }
+
+/* ── FOOTER ── */
+footer {
+  background: #080f0b; padding: 2.5rem 2rem; text-align: center;
+  border-top: 1px solid rgba(166,187,163,0.08);
+}
+footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
+
+/* ── ANIMATIONS ── */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 680px) {
+  nav .nav-links { display: none; }
+  .domino-chain { flex-direction: column; }
+  .dom-item { border-right: 1px solid rgba(166,187,163,0.15); border-bottom: none; }
+  .dom-item:last-child { border-bottom: 1px solid rgba(166,187,163,0.15); }
+  .graph-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Systemic Collapse</div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#domino">Domino Effect</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#business">Business Case</a></li>
+    <li><a href="#downloads">Evidence Pack</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#hosting">Get QR Code</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Stakeholder Evidence Pack · South Africa · 2024</div>
+    <h1>Unemployment<br>Triggers <em>Systemic</em><br>Collapse</h1>
+    <p class="hero-sub">How unemployment weakens communities, skills, and future markets</p>
+    <p class="hero-body">South Africa's unemployment crisis is not an isolated labour issue. It weakens connected systems such as income, health, education, equality, and economic growth. This evidence pack explains how unemployment creates a domino effect that affects both communities and future business markets.</p>
+    <div class="btn-row">
+      <a href="#downloads" class="btn btn-primary">Download Full Report</a>
+      <a href="#data" class="btn btn-outline">View Key Data</a>
+      <a href="#downloads" class="btn btn-outline">View Poster</a>
+    </div>
+    <div class="domino-strip">
+      <div class="domino-chip">Unemployment</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Poverty</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Food Insecurity</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Poor Health</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Skills Loss</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Inequality</div>
+      <span class="domino-arrow">→</span>
+      <div class="domino-chip">Shrinking Market</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-inner fade-in">
+    <div class="section-label">01 — The Problem</div>
+    <h2>Unequal Access<br>Starts the Collapse</h2>
+    <p class="lead">Jobs, infrastructure, education, and transport remain unevenly distributed across South Africa. Rural and township communities often face fewer pathways into employment, limiting economic participation and increasing vulnerability.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>What Is Wrong</h3>
+        <p>Unemployment remains high and persistent, entrenched across multiple generations and regions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Who Is Affected</h3>
+        <p>Rural communities, township residents, youth, and low-income households bear the greatest burden.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📉</div>
+        <h3>Why It Matters</h3>
+        <p>Reduced income weakens consumer spending, limits skills development, and shrinks the size of future markets.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Spatial Inequality</h3>
+        <p>Location, infrastructure, and transport determine access. Those without these are structurally excluded.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p>"Unemployment is the first domino in a wider system collapse."</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOMINO EFFECT -->
+<section id="domino">
+  <div class="section-inner fade-in">
+    <div class="section-label">02 — The Domino Effect</div>
+    <h2>The Domino Effect Across<br>Connected Systems</h2>
+    <p class="lead">The collapse is not only linear. Each weakened system intensifies others. Click each domino to expand.</p>
+    <div class="domino-chain">
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">💼</div>
+        <div class="dom-num">01</div>
+        <div class="dom-title">Unemployment</div>
+        <div class="dom-expand">Loss of work reduces household income and blocks participation in the economy. It is the entry point through which all other failures cascade.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">📊</div>
+        <div class="dom-num">02</div>
+        <div class="dom-title">Poverty</div>
+        <div class="dom-expand">Without stable income, households struggle to meet basic needs — food, shelter, transport, and education become unaffordable.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">🌾</div>
+        <div class="dom-num">03</div>
+        <div class="dom-title">Food Insecurity</div>
+        <div class="dom-expand">Reduced income limits access to reliable nutrition, affecting physical development, cognitive performance, and workforce readiness.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">🏥</div>
+        <div class="dom-num">04</div>
+        <div class="dom-title">Poor Health</div>
+        <div class="dom-expand">Poverty and food insecurity worsen both physical and mental health outcomes, increasing the burden on public health systems and reducing productivity.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">📚</div>
+        <div class="dom-num">05</div>
+        <div class="dom-title">Skills Loss</div>
+        <div class="dom-expand">Long-term unemployment reduces professional experience, training opportunities, and overall employability — locking communities out of economic recovery.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">⚖️</div>
+        <div class="dom-num">06</div>
+        <div class="dom-title">Inequality</div>
+        <div class="dom-expand">Communities with fewer resources, skills, and infrastructure fall further behind, widening the gap between advantaged and disadvantaged populations.</div>
+      </div>
+      <div class="dom-item" onclick="toggleDom(this)">
+        <div class="dom-icon">📉</div>
+        <div class="dom-num">07</div>
+        <div class="dom-title">Shrinking Market</div>
+        <div class="dom-expand">Lower income and weaker workforce readiness reduce consumer spending and business growth, ultimately shrinking the market that businesses depend on.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <p>"Each weakened system places pressure on the others — creating wider systemic collapse."</p>
+    </div>
+  </div>
+</section>
+
+<!-- KEY DATA -->
+<section id="data">
+  <div class="section-inner fade-in">
+    <div class="section-label">03 — Key Evidence</div>
+    <h2>The Numbers Behind<br>the Collapse</h2>
+    <p class="lead">South Africa's unemployment data reveals not a temporary crisis, but a structural emergency. The figures below are drawn from official and internationally recognised sources.</p>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-num">32.9%</div>
+        <div class="stat-label">Official Unemployment Rate</div>
+        <div class="stat-desc">South Africa's official unemployment rate, Q1 2024 (Stats SA QLFS)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">~59.7%</div>
+        <div class="stat-label">Youth Unemployment</div>
+        <div class="stat-desc">Youth aged 15–24 among the most severely affected. Source: Stats SA QLFS Q1:2024</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">~41.9%</div>
+        <div class="stat-label">Expanded Unemployment</div>
+        <div class="stat-desc">Includes discouraged work-seekers. Source: Stats SA QLFS Q1:2024</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">~8.2M</div>
+        <div class="stat-label">People Unemployed</div>
+        <div class="stat-desc">Total unemployed persons in Q1:2024. Source: Stats SA QLFS Q1:2024</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">~3.1M</div>
+        <div class="stat-label">Discouraged Work-Seekers</div>
+        <div class="stat-desc">People who stopped seeking work. Decreased slightly Q4:2023→Q1:2024. <span class="verify">[Confirm exact total from Stats SA QLFS Q1:2024 Table 2]</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">0.63</div>
+        <div class="stat-label">Gini Coefficient</div>
+        <div class="stat-desc">South Africa remains one of the most unequal countries globally (World Bank)</div>
+      </div>
+    </div>
+    <div class="card" style="max-width:600px;">
+      <div class="card-icon">⚡</div>
+      <h3>Poverty Rate</h3>
+      <p>More than half of the South African population lives below the poverty line. Unemployment and poverty are strongly correlated across all provinces. <span class="verify">[Confirm exact poverty headcount figure and year from Stats SA or World Bank poverty report]</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPHS -->
+<section id="graphs">
+  <div class="section-inner fade-in">
+    <div class="section-label">04 — Data Trends</div>
+    <h2>Data Trends Behind<br>the Collapse</h2>
+    <p class="lead">Four visualisations that show the persistence, depth, and spread of South Africa's unemployment crisis.</p>
+    <div class="graph-grid">
+      <div class="graph-card">
+        <div class="graph-title">The First Domino Has Been Falling for Years</div>
+        <div class="graph-subtitle">Unemployment rate trend over time</div>
+        <canvas id="chart1" height="200"></canvas>
+      </div>
+      <div class="graph-card">
+        <div class="graph-title">A Future Workforce Under Pressure</div>
+        <div class="graph-subtitle">Youth vs general unemployment comparison</div>
+        <canvas id="chart2" height="200"></canvas>
+      </div>
+      <div class="graph-card">
+        <div class="graph-title">Where the Dominoes Fall Hardest</div>
+        <div class="graph-subtitle">Unemployment by province / region</div>
+        <canvas id="chart3" height="200"></canvas>
+      </div>
+      <div class="graph-card">
+        <div class="graph-title">A Weak Workforce Becomes a Weak Market</div>
+        <div class="graph-subtitle">Unemployment vs GDP growth rate</div>
+        <canvas id="chart4" height="200"></canvas>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.5rem;">
+      <p>Note: Replace placeholder chart data with final verified figures from Stats SA and World Bank before publication.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="section-inner fade-in">
+    <div class="section-label">05 — Investigation Method</div>
+    <h2>How We Investigated<br>the Problem</h2>
+    <p class="lead">The investigation used labour-market data, poverty trends, inequality indicators, and spatial analysis to trace how unemployment spreads through connected systems.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Labour Data</h3>
+        <p>Examined unemployment, youth unemployment, and expanded unemployment trends from official quarterly releases.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📐</div>
+        <h3>Poverty &amp; Inequality Indicators</h3>
+        <p>Used poverty headcount ratios and Gini coefficient data to understand how unemployment affects household vulnerability.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Trend Analysis</h3>
+        <p>Assessed whether unemployment is a temporary shock or a structural, persistent condition — with clear findings of the latter.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Spatial / GIS Thinking</h3>
+        <p>Identified how location, transport access, and infrastructure shape who can access economic opportunity and who cannot.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>SDG Systems Analysis</h3>
+        <p>Connected unemployment to multiple Sustainable Development Goals to show the full breadth of the crisis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS RELEVANCE -->
+<section id="business">
+  <div class="section-inner fade-in">
+    <div class="section-label">06 — Business Relevance</div>
+    <h2>Why Business Owners<br>Should Care</h2>
+    <div class="business-hero-text">
+      When unemployment weakens communities,<br>businesses lose both <em>workers and customers.</em>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h3>Smaller Customer Base</h3>
+        <p>When household income falls, consumer spending drops. Fewer employed people means fewer buyers for your products and services.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Weaker Workforce Pipeline</h3>
+        <p>Long-term unemployment reduces skills, experience, and job readiness. Hiring from a depleted talent pool becomes harder and more costly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Slower Business Growth</h3>
+        <p>Weak demand discourages expansion, hiring, and capital investment. Economic stagnation becomes self-reinforcing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>Lower Investor Confidence</h3>
+        <p>Unstable labour markets and high inequality create uncertainty, reducing the attractiveness of the business environment.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏘️</div>
+        <h3>Higher Social Pressure</h3>
+        <p>Poverty, crime risk, and overburdened public services create an operating environment that is harder and more expensive to navigate.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p>"A collapsing social system becomes a shrinking business market."</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity">
+  <div class="section-inner fade-in">
+    <div class="section-label">07 — Opportunity</div>
+    <h2>Strengthening the System<br>Before It Falls</h2>
+    <p class="lead">Addressing unemployment can strengthen multiple systems at once. Investment is not charity — it is strategic market-building.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>Infrastructure Investment</h3>
+        <p>Improves access to jobs, services, and business activity — particularly in underserved rural and township areas.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3>Skills Development</h3>
+        <p>Builds a stronger workforce pipeline, improving both employability and the quality of the talent market.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Ethical Engineering</h3>
+        <p>Ensures projects are sustainable, transparent, and genuinely beneficial to communities — not extractive.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Local Economic Participation</h3>
+        <p>More employed people means more income, more consumer spending, and stronger local markets.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Long-Term Market Stability</h3>
+        <p>Stronger communities produce more resilient businesses. Employment investment grows markets.</p>
+      </div>
+    </div>
+    <div class="big-statement">
+      Fixing unemployment does not just create jobs —<br>
+      it creates <span>customers</span>, strengthens demand,<br>
+      and builds <span>future markets.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SDGs -->
+<section id="sdgs">
+  <div class="section-inner fade-in">
+    <div class="section-label">08 — Sustainable Development Goals</div>
+    <h2>Linked SDGs</h2>
+    <p class="lead">This project connects to seven Sustainable Development Goals, demonstrating that unemployment is not a single-issue problem.</p>
+    <div class="sdg-grid">
+      <div class="sdg-card">
+        <div class="sdg-num">1</div>
+        <div class="sdg-text">
+          <h4>No Poverty</h4>
+          <p>Unemployment reduces household income and deepens poverty cycles.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">2</div>
+        <div class="sdg-text">
+          <h4>Zero Hunger</h4>
+          <p>Lower income increases food insecurity across households and communities.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">3</div>
+        <div class="sdg-text">
+          <h4>Good Health &amp; Well-being</h4>
+          <p>Poverty and food insecurity worsen physical and mental health outcomes.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">4</div>
+        <div class="sdg-text">
+          <h4>Quality Education</h4>
+          <p>Limited opportunity and poverty reduce access to skills development.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">8</div>
+        <div class="sdg-text">
+          <h4>Decent Work &amp; Economic Growth</h4>
+          <p>Unemployment directly weakens labour markets and economic participation.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">10</div>
+        <div class="sdg-text">
+          <h4>Reduced Inequalities</h4>
+          <p>Unemployment reinforces structural inequality between communities.</p>
+        </div>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">11</div>
+        <div class="sdg-text">
+          <h4>Sustainable Cities &amp; Communities</h4>
+          <p>Unequal infrastructure and spatial exclusion limit access to opportunity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <div class="section-inner fade-in">
+    <div class="section-label">09 — Evidence Pack</div>
+    <h2>Download the<br>Evidence Pack</h2>
+    <p class="lead">The evidence pack contains the full investigation behind the poster, including the report, data sources, graph references, and stakeholder-focused summary.</p>
+    <div class="dl-grid">
+      <a href="3C Group - ICC 113 Project Report.pdf" download class="dl-card" style="border-color:var(--sage);background:rgba(166,187,163,0.12);">
+        <div class="dl-icon">📄</div>
+        <div class="dl-name">Full ICC Report — PDF</div>
+        <div class="dl-desc">Complete 16-page investigation · ICC 113 · Stellenbosch University</div>
+      </a>
+      <a href="#" class="dl-card">
+        <div class="dl-icon">🖼️</div>
+        <div class="dl-name">Poster PDF</div>
+        <div class="dl-desc">High-resolution printable poster</div>
+      </a>
+      <a href="stakeholder-summary.html" target="_blank" class="dl-card">
+        <div class="dl-icon">📋</div>
+        <div class="dl-name">Stakeholder Summary</div>
+        <div class="dl-desc">Business-focused one-pager · Print to PDF from browser</div>
+      </a>
+      <a href="#references" class="dl-card">
+        <div class="dl-icon">🔗</div>
+        <div class="dl-name">Data Sources</div>
+        <div class="dl-desc">All references and citations</div>
+      </a>
+      <a href="#graphs" class="dl-card">
+        <div class="dl-icon">📊</div>
+        <div class="dl-name">Graphs &amp; Visual Data</div>
+        <div class="dl-desc">All charts in full resolution</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="section-inner fade-in">
+    <div class="section-label">10 — References</div>
+    <h2>References &amp;<br>Data Sources</h2>
+    <p class="lead">All sources listed in Harvard (Stellenbosch University) format, matching the full report reference list.</p>
+    <ul class="ref-list">
+      <li>Engineering Council of South Africa (ECSA). 2023. <em>Qualification standard for Bachelor of Science in Engineering / Bachelor of Engineering: NQF Level 8.</em> Johannesburg: ECSA.</li>
+      <li>FinMark Trust. 2023. <em>Research report on mobile money in South Africa.</em> Available at: https://finmark.org.za (Accessed: 14 March 2026).</li>
+      <li>International Monetary Fund. 2020. Six charts explain South Africa's inequality. Available at: https://www.imf.org/en/News/Articles/2020/01/29/na012820six-charts-on-south-africas-persistent-and-multi-faceted-inequality (Accessed: 22 March 2026).</li>
+      <li>Nediger, M. 2025. What is data visualization? <em>Venngage.</em> Available at: https://venngage.com/blog/data-visualization/ (Accessed: 22 March 2026).</li>
+      <li>Ni, J., Zhang, Y., Wang, Y., Zhang, X. and Zhang, G. 2025. Assessment of economic well-being in South Africa based on remote sensing transfer learning. <em>ISPRS Archives,</em> XLVIII-M-7-2025, pp. 253–260.</li>
+      <li>Statistics South Africa. 2020. <em>Child poverty in South Africa: A multiple overlapping deprivation analysis.</em> Pretoria: Statistics South Africa.</li>
+      <li>Statistics South Africa. 2024a. <em>Quarterly Labour Force Survey: Quarter 1: 2024.</em> Statistical Release P0211. Pretoria: Statistics South Africa. Released 14 May 2024. Available at: www.statssa.gov.za/publications/P0211/P02111stQuarter2024.pdf (Accessed: 3 May 2026).</li>
+      <li>Statistics South Africa. 2024b. <em>Poverty trends in South Africa: An examination of absolute poverty between 2006 and 2023.</em> Pretoria: Statistics South Africa.</li>
+      <li>TheGlobalEconomy.com. 2024. South Africa: Unemployment rate. Available at: https://www.theglobaleconomy.com/South-Africa/Unemployment/ (Accessed: 22 March 2026).</li>
+      <li>United Nations. 2024. Sustainable Development Goal 1: No poverty. Available at: https://southafrica.un.org/en/sdgs/1 (Accessed: 14 March 2026).</li>
+      <li>United Nations Educational, Scientific and Cultural Organization (UNESCO). 2023. <em>Engineering for sustainable development.</em> Paris: UNESCO.</li>
+      <li>World Bank. 2025a. <em>South Africa overview.</em> Washington, DC: World Bank Group. Available at: www.worldbank.org/en/country/southafrica/overview (Accessed: 22 March 2026).</li>
+      <li>World Bank. 2025b. <em>Digital financial inclusion: Tools for poverty reduction.</em> Washington, DC: World Bank Group.</li>
+      <li>World Health Organization. 2023. <em>Social determinants of health: Unemployment and health.</em> Geneva: WHO.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner fade-in">
+    <div class="section-label">11 — Project Team</div>
+    <h2>Project Team</h2>
+    <div class="team-box">
+      <h3>Prepared as part of the ICC 113 Engineering in Society investigation into SDG 1: No Poverty, focusing on unemployment as a trigger of systemic collapse in South Africa.</h3>
+      <div class="team-row">
+        <div class="team-key">Project Title</div>
+        <div class="team-val">Poverty in South Africa: Unemployment as a Systemic Driver of Inequality and Economic Exclusion</div>
+      </div>
+      <div class="team-row">
+        <div class="team-key">Module</div>
+        <div class="team-val">ICC 113 — Engineering in Society</div>
+      </div>
+      <div class="team-row">
+        <div class="team-key">Institution</div>
+        <div class="team-val">Stellenbosch University</div>
+      </div>
+      <div class="team-row">
+        <div class="team-key">Date</div>
+        <div class="team-val">21 March 2026</div>
+      </div>
+      <div class="team-row" style="align-items:flex-start;">
+        <div class="team-key">Group Members</div>
+        <div class="team-val" style="display:flex;flex-direction:column;gap:0.3rem;">
+          <span>H. Venter — 30011906 <span style="color:var(--sage);font-size:0.75rem;">(GA 1: Complex Problem Solving)</span></span>
+          <span>B. Kahn — 30056756 <span style="color:var(--sage);font-size:0.75rem;">(GA 2: Engineering Knowledge)</span></span>
+          <span>D. Walters — 30246970 <span style="color:var(--sage);font-size:0.75rem;">(GA 3: Design)</span></span>
+          <span>D. Matulizo — 30647479 <span style="color:var(--sage);font-size:0.75rem;">(GA 4: Investigation)</span></span>
+          <span>J. Standage — 29965772 <span style="color:var(--sage);font-size:0.75rem;">(GA 5: Tools, Technologies & Methods)</span></span>
+          <span>G. du Toit — 30442338 <span style="color:var(--sage);font-size:0.75rem;">(GA 6: Communication)</span></span>
+          <span>A. Paul — 30651883 <span style="color:var(--sage);font-size:0.75rem;">(GA 7: Engineering in the World)</span></span>
+          <span>C. Meintjies — 305381140 <span style="color:var(--sage);font-size:0.75rem;">(GA 10: Ethics & Professionalism)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTING GUIDE -->
+<section id="hosting" style="background:var(--green-deep);border-top:1px solid rgba(166,187,163,0.15);">
+  <div class="section-inner fade-in">
+    <div class="section-label">12 — Get Your QR Code</div>
+    <h2>How to Publish This Site<br>&amp; Generate a QR Code</h2>
+    <p class="lead">To link your poster QR code to this website, you need to host it online. Here are the three fastest free options — each takes under 5 minutes.</p>
+
+    <div class="card-grid" style="margin-bottom:2.5rem;">
+
+      <div class="card" style="border-color:rgba(166,187,163,0.35);">
+        <div class="card-icon">⭐</div>
+        <h3>Option 1 — Netlify Drop <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Recommended · Free)</span></h3>
+        <p style="margin-bottom:0.8rem;">The easiest option. No account required to start.</p>
+        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
+          <li>Go to <strong style="color:var(--sage);">netlify.com/drop</strong></li>
+          <li>Put <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">index.html</code> and your PDF files in one folder</li>
+          <li>Drag that entire folder onto the Netlify page</li>
+          <li>Netlify gives you a live URL instantly — e.g. <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">https://abc123.netlify.app</code></li>
+          <li>Paste that URL into a free QR generator (see below)</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🐙</div>
+        <h3>Option 2 — GitHub Pages <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Free · Permanent)</span></h3>
+        <p style="margin-bottom:0.8rem;">Best if you want a permanent, named URL.</p>
+        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
+          <li>Create a free account at <strong style="color:var(--sage);">github.com</strong></li>
+          <li>Create a new repository named <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">icc113-evidence</code></li>
+          <li>Upload <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">index.html</code> + PDF files</li>
+          <li>Go to Settings → Pages → set source to <em>main branch</em></li>
+          <li>Your URL: <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">https://yourusername.github.io/icc113-evidence</code></li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔺</div>
+        <h3>Option 3 — Vercel <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Free · Fast)</span></h3>
+        <p style="margin-bottom:0.8rem;">Slightly more setup, very fast globally.</p>
+        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
+          <li>Go to <strong style="color:var(--sage);">vercel.com</strong> and sign in with GitHub</li>
+          <li>Click <em>New Project</em> → drag in your folder</li>
+          <li>Deploy — Vercel generates a live URL instantly</li>
+          <li>Use that URL for your QR code</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-bottom:2.5rem;">
+      <p>Once you have your live URL → go to <strong>qr.io</strong> or <strong>qrcode-monkey.com</strong> to generate a styled QR code. Download it as SVG or PNG and place it on your poster.</p>
+    </div>
+
+    <div style="background:rgba(166,187,163,0.06);border:1px solid rgba(166,187,163,0.2);border-radius:4px;padding:2rem;">
+      <p style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;">Files to upload together</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+        <div style="background:rgba(166,187,163,0.1);border:1px solid rgba(166,187,163,0.25);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">index.html</div>
+        <div style="background:rgba(166,187,163,0.1);border:1px solid rgba(166,187,163,0.25);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">3C Group - ICC 113 Project Report.pdf</div>
+        <div style="background:rgba(122,62,45,0.2);border:1px solid rgba(122,62,45,0.4);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">poster.pdf &nbsp;← add when ready</div>
+        <div style="background:rgba(122,62,45,0.2);border:1px solid rgba(122,62,45,0.4);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">stakeholder-summary.pdf &nbsp;← add when ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Unemployment Triggers Systemic Collapse · Stakeholder Evidence Pack · ICC 113 · Stellenbosch University · Group 3C · 2026 · For academic and stakeholder use only</p>
+</footer>
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// ── DOMINO TOGGLE ──
+function toggleDom(el) {
+  const isActive = el.classList.contains('active');
+  document.querySelectorAll('.dom-item').forEach(d => d.classList.remove('active'));
+  if (!isActive) el.classList.add('active');
+}
+
+// ── SCROLL ANIMATIONS ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── CHART DEFAULTS ──
+Chart.defaults.color = 'rgba(246,241,232,0.55)';
+Chart.defaults.borderColor = 'rgba(166,187,163,0.1)';
+const sage = '#A6BBA3';
+const brown = '#7A3E2D';
+const cream = '#F6F1E8';
+
+// Chart 1: Unemployment trend
+new Chart(document.getElementById('chart1'), {
+  type: 'line',
+  data: {
+    labels: ['2017','2018','2019','2020','2021','2022','2023','2024 Q1'],
+    datasets: [{
+      label: 'Unemployment Rate (%)',
+      data: [27.7, 27.2, 28.7, 32.5, 34.9, 33.9, 32.7, 32.9],
+      borderColor: sage, backgroundColor: 'rgba(166,187,163,0.1)',
+      fill: true, tension: 0.4, pointBackgroundColor: sage, pointRadius: 4
+    }]
+  },
+  options: { plugins: { legend: { display: false } }, scales: { y: { min: 20, max: 40 } } }
+});
+
+// Chart 2: Youth vs general unemployment
+new Chart(document.getElementById('chart2'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024 Q1'],
+    datasets: [
+      { label: 'General (%)', data: [28.7, 32.5, 34.9, 33.9, 32.7, 32.9], backgroundColor: 'rgba(166,187,163,0.6)' },
+      { label: 'Youth (%)', data: [55.2, 59.3, 64.4, 61.4, 59.6, 59.7], backgroundColor: 'rgba(122,62,45,0.75)' }
+    ]
+  },
+  options: { plugins: { legend: { labels: { color: 'rgba(246,241,232,0.6)', font: { size: 11 } } } } }
+});
+
+// Chart 3: Regional
+new Chart(document.getElementById('chart3'), {
+  type: 'bar',
+  data: {
+    labels: ['Limpopo','EC','KZN','MP','FS','NW','WC','GP','NC'],
+    datasets: [{
+      label: 'Unemployment Rate (%)',
+      data: [47, 44, 35, 38, 40, 36, 22, 33, 30],
+      backgroundColor: [
+        'rgba(122,62,45,0.85)','rgba(122,62,45,0.75)','rgba(122,62,45,0.65)',
+        'rgba(166,187,163,0.6)','rgba(166,187,163,0.55)','rgba(166,187,163,0.5)',
+        'rgba(166,187,163,0.35)','rgba(166,187,163,0.4)','rgba(166,187,163,0.3)'
+      ]
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: { x: { min: 0, max: 55 } }
+  }
+});
+
+// Chart 4: Unemployment vs GDP
+new Chart(document.getElementById('chart4'), {
+  type: 'line',
+  data: {
+    labels: ['2018','2019','2020','2021','2022','2023'],
+    datasets: [
+      {
+        label: 'Unemployment Rate (%)',
+        data: [27.2, 28.7, 32.5, 34.9, 33.9, 32.7],
+        borderColor: brown, backgroundColor: 'transparent',
+        yAxisID: 'y', tension: 0.4, pointRadius: 4, pointBackgroundColor: brown
+      },
+      {
+        label: 'GDP Growth (%)',
+        data: [1.5, 0.3, -6.4, 4.9, 2.0, 0.6],
+        borderColor: sage, backgroundColor: 'transparent',
+        yAxisID: 'y1', tension: 0.4, pointRadius: 4, pointBackgroundColor: sage
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { labels: { color: 'rgba(246,241,232,0.6)', font: { size: 11 } } } },
+    scales: {
+      y: { type: 'linear', display: true, position: 'left', title: { display: true, text: 'Unemployment %', color: 'rgba(246,241,232,0.4)', font: { size: 10 } } },
+      y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: 'GDP Growth %', color: 'rgba(246,241,232,0.4)', font: { size: 10 } }, grid: { drawOnChartArea: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>
