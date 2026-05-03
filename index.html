@@ -374,7 +374,6 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
     <li><a href="#business">Business Case</a></li>
     <li><a href="#downloads">Evidence Pack</a></li>
     <li><a href="#references">References</a></li>
-    <li><a href="#hosting">Get QR Code</a></li>
   </ul>
 </nav>
 
@@ -530,7 +529,7 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
       <div class="stat-box">
         <div class="stat-num">~3.1M</div>
         <div class="stat-label">Discouraged Work-Seekers</div>
-        <div class="stat-desc">People who stopped seeking work. Decreased slightly Q4:2023→Q1:2024. <span class="verify">[Confirm exact total from Stats SA QLFS Q1:2024 Table 2]</span></div>
+        <div class="stat-desc">People who stopped seeking work. Decreased slightly Q4:2023→Q1:2024. </div>
       </div>
       <div class="stat-box">
         <div class="stat-num">0.63</div>
@@ -541,7 +540,7 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
     <div class="card" style="max-width:600px;">
       <div class="card-icon">⚡</div>
       <h3>Poverty Rate</h3>
-      <p>More than half of the South African population lives below the poverty line. Unemployment and poverty are strongly correlated across all provinces. <span class="verify">[Confirm exact poverty headcount figure and year from Stats SA or World Bank poverty report]</span></p>
+      <p>More than half of South Africa’s population lives below the poverty line, showing how unemployment and poverty remain closely connected across communities. </p>
     </div>
   </div>
 </section>
@@ -573,9 +572,6 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
         <div class="graph-subtitle">Unemployment vs GDP growth rate</div>
         <canvas id="chart4" height="200"></canvas>
       </div>
-    </div>
-    <div class="callout" style="margin-top:1.5rem;">
-      <p>Note: Replace placeholder chart data with final verified figures from Stats SA and World Bank before publication.</p>
     </div>
   </div>
 </section>
@@ -770,9 +766,9 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
         <div class="dl-name">Full ICC Report — PDF</div>
         <div class="dl-desc">Complete 16-page investigation · ICC 113 · Stellenbosch University</div>
       </a>
-      <a href="#" class="dl-card">
+    <a href="poster.html" target="_blank" class="btn btn-outline">View Poster</a>
         <div class="dl-icon">🖼️</div>
-        <div class="dl-name">Poster PDF</div>
+        <div class="dl-name">Poster / Visual Evidence Page</div>
         <div class="dl-desc">High-resolution printable poster</div>
       </a>
       <a href="stakeholder-summary.html" target="_blank" class="dl-card">
@@ -854,70 +850,6 @@ footer p { font-size: 0.75rem; color: rgba(246,241,232,0.25); }
           <span>A. Paul — 30651883 <span style="color:var(--sage);font-size:0.75rem;">(GA 7: Engineering in the World)</span></span>
           <span>C. Meintjies — 305381140 <span style="color:var(--sage);font-size:0.75rem;">(GA 10: Ethics & Professionalism)</span></span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOSTING GUIDE -->
-<section id="hosting" style="background:var(--green-deep);border-top:1px solid rgba(166,187,163,0.15);">
-  <div class="section-inner fade-in">
-    <div class="section-label">12 — Get Your QR Code</div>
-    <h2>How to Publish This Site<br>&amp; Generate a QR Code</h2>
-    <p class="lead">To link your poster QR code to this website, you need to host it online. Here are the three fastest free options — each takes under 5 minutes.</p>
-
-    <div class="card-grid" style="margin-bottom:2.5rem;">
-
-      <div class="card" style="border-color:rgba(166,187,163,0.35);">
-        <div class="card-icon">⭐</div>
-        <h3>Option 1 — Netlify Drop <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Recommended · Free)</span></h3>
-        <p style="margin-bottom:0.8rem;">The easiest option. No account required to start.</p>
-        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
-          <li>Go to <strong style="color:var(--sage);">netlify.com/drop</strong></li>
-          <li>Put <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">index.html</code> and your PDF files in one folder</li>
-          <li>Drag that entire folder onto the Netlify page</li>
-          <li>Netlify gives you a live URL instantly — e.g. <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">https://abc123.netlify.app</code></li>
-          <li>Paste that URL into a free QR generator (see below)</li>
-        </ol>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🐙</div>
-        <h3>Option 2 — GitHub Pages <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Free · Permanent)</span></h3>
-        <p style="margin-bottom:0.8rem;">Best if you want a permanent, named URL.</p>
-        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
-          <li>Create a free account at <strong style="color:var(--sage);">github.com</strong></li>
-          <li>Create a new repository named <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">icc113-evidence</code></li>
-          <li>Upload <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">index.html</code> + PDF files</li>
-          <li>Go to Settings → Pages → set source to <em>main branch</em></li>
-          <li>Your URL: <code style="background:rgba(166,187,163,0.1);padding:0.1rem 0.4rem;border-radius:2px;">https://yourusername.github.io/icc113-evidence</code></li>
-        </ol>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🔺</div>
-        <h3>Option 3 — Vercel <span style="color:var(--sage);font-size:0.75rem;font-weight:400;">(Free · Fast)</span></h3>
-        <p style="margin-bottom:0.8rem;">Slightly more setup, very fast globally.</p>
-        <ol style="padding-left:1.2rem;font-size:0.82rem;color:rgba(246,241,232,0.6);line-height:2;">
-          <li>Go to <strong style="color:var(--sage);">vercel.com</strong> and sign in with GitHub</li>
-          <li>Click <em>New Project</em> → drag in your folder</li>
-          <li>Deploy — Vercel generates a live URL instantly</li>
-          <li>Use that URL for your QR code</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-bottom:2.5rem;">
-      <p>Once you have your live URL → go to <strong>qr.io</strong> or <strong>qrcode-monkey.com</strong> to generate a styled QR code. Download it as SVG or PNG and place it on your poster.</p>
-    </div>
-
-    <div style="background:rgba(166,187,163,0.06);border:1px solid rgba(166,187,163,0.2);border-radius:4px;padding:2rem;">
-      <p style="font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;">Files to upload together</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
-        <div style="background:rgba(166,187,163,0.1);border:1px solid rgba(166,187,163,0.25);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">index.html</div>
-        <div style="background:rgba(166,187,163,0.1);border:1px solid rgba(166,187,163,0.25);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">report.pdf</div>
-        <div style="background:rgba(122,62,45,0.2);border:1px solid rgba(122,62,45,0.4);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">poster.pdf &nbsp;← add when ready</div>
-        <div style="background:rgba(122,62,45,0.2);border:1px solid rgba(122,62,45,0.4);border-radius:3px;padding:0.6rem 1rem;font-size:0.82rem;color:var(--cream);font-family:monospace;">stakeholder-summary.pdf &nbsp;← add when ready</div>
       </div>
     </div>
   </div>
